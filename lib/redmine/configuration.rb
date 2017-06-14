@@ -64,6 +64,10 @@ module Redmine
           end
         end
 
+        if text_extractors = @config['text_extractors']
+          Plaintext::Configuration.load YAML.dump text_extractors
+        end
+
         check_regular_expressions
         @config
       end
