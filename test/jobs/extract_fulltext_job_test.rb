@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ExtractFulltextJobTest < ActiveJob::TestCase
+  fixtures :issues, :users
 
   def test_should_extract_fulltext
     att = nil
@@ -17,7 +18,8 @@ class ExtractFulltextJobTest < ActiveJob::TestCase
     ExtractFulltextJob.perform_now(att.id)
 
     att.reload
-    assert att.fulltext.include?("this is a text file for upload tests\r\nwith multiple lines")
+    assert_equal("this is a text file for upload tests with multiple lines",
+                 att.fulltext)
   end
 
 end

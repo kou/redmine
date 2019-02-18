@@ -509,6 +509,7 @@ class AttachmentTest < ActiveSupport::TestCase
       :author => User.find(1),
       :content_type => 'text/plain')
     a.reload
-    assert a.fulltext.include?("this is a text file for upload tests\r\nwith multiple lines")
+    assert_equal("this is a text file for upload tests with multiple lines",
+                 a.fulltext)
   end
 end
