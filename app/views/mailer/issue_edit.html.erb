@@ -10,6 +10,28 @@
 <% end %>
 </ul>
 
+<%= call_hook(:view_mailer_issue_edit_after_details,
+              :issue => @issue,
+              :journal => @journal,
+              :journal_details => @journal_details,
+              :users => @users,
+              :issue_url => @issue_url) %>
+
 <%= textilizable(@journal, :notes, :only_path => false) %>
+
+<%= call_hook(:view_mailer_issue_edit_after_notes,
+              :issue => @issue,
+              :journal => @journal,
+              :journal_details => @journal_details,
+              :users => @users,
+              :issue_url => @issue_url) %>
+
 <hr />
 <%= render :partial => 'issue', :formats => [:html], :locals => { :issue => @issue, :user => @user, :issue_url => @issue_url } %>
+
+<%= call_hook(:view_mailer_issue_edit_bottom,
+              :issue => @issue,
+              :journal => @journal,
+              :journal_details => @journal_details,
+              :users => @users,
+              :issue_url => @issue_url) %>

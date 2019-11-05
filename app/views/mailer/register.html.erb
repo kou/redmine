@@ -1,2 +1,4 @@
 <p><%= l(:mail_body_register) %><br />
 <%= link_to @url, @url %></p>
+
+<%= call_hook(:view_mailer_register_bottom) %>

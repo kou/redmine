@@ -2,3 +2,6 @@
 <em><%= @news.author.name %></em>
 
 <%= textilizable(@news, :description, :only_path => false) %>
+
+<%= call_hook(:view_mailer_news_added_bottom,
+              :news => @news) %>

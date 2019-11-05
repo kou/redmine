@@ -3,3 +3,6 @@
 <ul><% @attachments.each do |attachment | %>
 <li><%= attachment.filename %></li>
 <% end %></ul>
+
+<%= call_hook(:view_mailer_attachments_added_bottom,
+              :attachments => @attachments) %>

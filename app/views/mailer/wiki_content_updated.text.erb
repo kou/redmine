@@ -6,3 +6,6 @@
 <%= @wiki_content_url %>
 <%= l(:label_view_diff) %>:
 <%= @wiki_diff_url %>
+
+<%= call_hook(:view_mailer_wiki_content_updated_bottom,
+              :wiki_content => @wiki_content) %>

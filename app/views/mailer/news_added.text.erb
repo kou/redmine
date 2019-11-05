@@ -3,3 +3,6 @@
 <%= @news.author.name %>
 
 <%= @news.description %>
+
+<%= call_hook(:view_mailer_news_added_bottom,
+              :news => @news) %>

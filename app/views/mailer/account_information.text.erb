@@ -4,3 +4,6 @@
 <% if @password %>* <%= l(:field_password) %>: <%= @password %><% end %>
 <% end %>
 <%= l(:label_login) %>: <%= @login_url %>
+
+<%= call_hook(:view_mailer_account_information_bottom,
+              :user => @user) %>

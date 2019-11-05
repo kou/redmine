@@ -1,2 +1,5 @@
 <p><%= l(:mail_body_account_activation_request, h(@new_user.login)) %></p>
 <p><%= link_to @url, @url %></p>
+
+<%= call_hook(:view_mailer_account_activation_request_bottom,
+              :user => @user) %>

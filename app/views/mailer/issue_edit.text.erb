@@ -3,10 +3,28 @@
 <% details_to_strings(@journal_details, true).each do |string| -%>
 <%= string %>
 <% end -%>
+<%= call_hook(:view_mailer_issue_edit_after_details,
+              :issue => @issue,
+              :journal => @journal,
+              :journal_details => @journal_details,
+              :users => @users,
+              :issue_url => @issue_url) -%>
 
 <% if @journal.notes? -%>
 <%= @journal.notes %>
 
 <% end -%>
+<%= call_hook(:view_mailer_issue_edit_after_notes,
+              :issue => @issue,
+              :journal => @journal,
+              :journal_details => @journal_details,
+              :users => @users,
+              :issue_url => @issue_url) -%>
 ----------------------------------------
 <%= render :partial => 'issue', :formats => [:text], :locals => { :issue => @issue, :user => @user, :issue_url => @issue_url } %>
+<%= call_hook(:view_mailer_issue_edit_bottom,
+              :issue => @issue,
+              :journal => @journal,
+              :journal_details => @journal_details,
+              :users => @users,
+              :issue_url => @issue_url) -%>

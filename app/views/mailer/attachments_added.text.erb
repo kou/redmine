@@ -2,3 +2,6 @@
 - <%= attachment.filename %><% end %>
 
 <%= @added_to_url %>
+
+<%= call_hook(:view_mailer_attachments_added_bottom,
+              :attachments => @attachments) %>

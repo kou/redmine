@@ -2,3 +2,6 @@
 <%= @document_url %>
 
 <%= @document.description %>
+
+<%= call_hook(:view_mailer_document_added_bottom,
+              :document => @document) %>

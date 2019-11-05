@@ -12,3 +12,5 @@
 <%= l(:field_remote_ip) %>: <strong><%= @remote_ip %></strong><br/>
 <%= l(:label_date) %>: <strong><%= format_time Time.now, true %></strong></p>
 
+<%= call_hook(:view_mailer_settings_updated_bottom,
+              :changes => @changes) %>

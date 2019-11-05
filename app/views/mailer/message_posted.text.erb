@@ -2,3 +2,6 @@
 <%= @message.author %>
 
 <%= @message.content %>
+
+<%= call_hook(:view_mailer_message_posted_bottom,
+              :message => @message) %>

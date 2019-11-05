@@ -5,3 +5,5 @@
 <%= l(:field_user) %>: <%= @sender.login %>
 <%= l(:field_remote_ip) %>: <%= @remote_ip %>
 <%= l(:label_date) %>: <%= format_time Time.now, true %>
+
+<%= call_hook(:view_mailer_security_notification_bottom) %>

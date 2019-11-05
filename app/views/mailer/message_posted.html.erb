@@ -2,3 +2,6 @@
 <em><%= @message.author %></em>
 
 <%= textilizable(@message, :content, :only_path => false) %>
+
+<%= call_hook(:view_mailer_message_posted_bottom,
+              :message => @message) %>

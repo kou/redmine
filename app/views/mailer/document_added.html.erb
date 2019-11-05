@@ -1,3 +1,6 @@
 <%= link_to(@document.title, @document_url) %> (<%= @document.category.name %>)<br />
 <br />
 <%= textilizable(@document, :description, :only_path => false) %>
+
+<%= call_hook(:view_mailer_document_added_bottom,
+              :document => @document) %>

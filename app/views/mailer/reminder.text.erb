@@ -5,3 +5,6 @@
 <% end -%>
 
 <%= @issues_url %>
+
+<%= call_hook(:view_mailer_reminder_bottom,
+              :issues => @issues) %>

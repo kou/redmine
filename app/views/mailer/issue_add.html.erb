@@ -1,3 +1,8 @@
 <%= l(:text_issue_added, :id => link_to("##{@issue.id}", @issue_url), :author => h(@issue.author)).html_safe %>
 <hr />
 <%= render :partial => 'issue', :formats => [:html], :locals => { :issue => @issue, :user => @user, :issue_url => @issue_url } %>
+
+<%= call_hook(:view_mailer_issue_add_bottom,
+              :issue => @issue,
+              :users => @users,
+              :issue_url => @issue_url) %>

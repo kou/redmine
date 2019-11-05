@@ -1,2 +1,4 @@
 <p><%= l(:notice_account_activated) %></p>
 <p><%= l(:label_login) %>: <%= link_to @login_url, @login_url %></p>
+
+<%= call_hook(:view_mailer_account_activated_bottom) %>

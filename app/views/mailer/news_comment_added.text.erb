@@ -4,3 +4,7 @@
 <%= l(:text_user_wrote, :value => @comment.author) %>
 
 <%= @comment.comments %>
+
+<%= call_hook(:view_mailer_news_comment_added_bottom,
+              :news => @news,
+              :comment => @comment) %>

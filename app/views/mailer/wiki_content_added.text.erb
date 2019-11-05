@@ -3,3 +3,6 @@
 <%= @wiki_content.comments %>
 
 <%= @wiki_content_url %>
+
+<%= call_hook(:view_mailer_wiki_content_added_bottom,
+              :wiki_content => @wiki_content) %>

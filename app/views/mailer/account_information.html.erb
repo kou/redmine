@@ -11,3 +11,6 @@
 <% end %>
 
 <p><%= l(:label_login) %>: <%= link_to @login_url, @login_url %></p>
+
+<%= call_hook(:view_mailer_account_information_bottom,
+              :user => @user) %>
